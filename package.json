@@ -45,7 +45,7 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint --ext .js ./",
+    "lint": "eslint --ignore-path .gitignore --ext .js ./",
     "build": "lerna exec -- webpack --config ../../webpack.config.js",
     "prepublish": "yarn build",
     "prepublishOnly": "yarn",
