@@ -1,0 +1,31 @@
+{
+  "name": "apium",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "lib/apium.js",
+  "module": "es/apium.js",
+  "unpkg": "dist/apium.js",
+  "description": "Redux middleware for event-driven HTTP requests with async/await support.",
+  "repository": "https://github.com/lundegaard/apium",
+  "contributors": [
+    "Vaclav Jancarik <vaclav.jancarik@lundegaard.eu>",
+    "Tomas Konrady <tomas.konrady@lundegaard.eu>",
+    "Jan Skovran <jan.skovran@lundegaard.eu>",
+    "Martin Kadlec <martin.kadlec@lundegaard.eu>",
+    "Sergey Dunaevskiy <sergey.dunaevskiy@lundegaard.eu>"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.10.5",
+    "core-js": "^3.6.5",
+    "invariant": "^2.2.4",
+    "ramda": "^0.27.0",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "redux": "^4.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}

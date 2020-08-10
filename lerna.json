@@ -1,0 +1,14 @@
+{
+  "lerna": "2.2.0",
+  "version": "0.0.0",
+  "command": {
+    "init": {
+      "exact": true
+    },
+    "publish": {
+      "ignoreChanges": ["*.md"]
+    }
+  },
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

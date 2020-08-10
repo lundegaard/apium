@@ -1,0 +1,54 @@
+{
+  "name": "@apium/monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "repository": "https://github.com/lundegaard/apium",
+  "contributors": [
+    "Vaclav Jancarik <vaclav.jancarik@lundegaard.eu>",
+    "Tomas Konrady <tomas.konrady@lundegaard.eu>",
+    "Jan Skovran <jan.skovran@lundegaard.eu>",
+    "Martin Kadlec <martin.kadlec@lundegaard.eu>",
+    "Sergey Dunaevskiy <sergey.dunaevskiy@lundegaard.eu>"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/core": "7.10.5",
+    "@babel/plugin-transform-runtime": "7.10.5",
+    "@babel/preset-env": "7.10.4",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "26.1.0",
+    "babel-loader": "8.1.0",
+    "confusing-browser-globals": "1.0.9",
+    "core-js": "3.6.5",
+    "cross-env": "7.0.2",
+    "eslint": "7.5.0",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.22.0",
+    "husky": "4.2.5",
+    "jest": "26.1.0",
+    "jest-fetch-mock": "3.0.3",
+    "lerna": "3.22.1",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5",
+    "ramda": "0.27.0",
+    "webpack": "4.44.0",
+    "webpack-cli": "3.3.12",
+    "webpack-node-externals": "2.5.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --ext .js ./",
+    "build": "lerna exec -- webpack --config ../../webpack.config.js",
+    "prepublish": "yarn build",
+    "prepublishOnly": "yarn",
+    "lernaPublish": "lerna publish"
+  }
+}
