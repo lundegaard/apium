@@ -23,7 +23,7 @@ const makeApiumMiddleware = (configuration = {}) => {
   return ({ dispatch, getState }) => {
     const performRequest = async originalRequestAction => {
       const {
-        baseUrl,
+        baseUrl = "",
         baseHeaders = {},
         baseRetryTimes = Defaults.retryTimes,
         baseRetryInterval = Defaults.retryInterval,
