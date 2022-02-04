@@ -23,7 +23,7 @@ const makeApiumMiddleware = (configuration = {}) => {
   return ({ dispatch, getState }) => {
     const performRequest = async originalRequestAction => {
       const {
-        baseUrl,
+        baseUrl = "",
         baseHeaders = {},
         baseRetryTimes = Defaults.retryTimes,
         baseRetryInterval = Defaults.retryInterval,
@@ -47,6 +47,7 @@ const makeApiumMiddleware = (configuration = {}) => {
         retryTimes = baseRetryTimes,
         retryInterval = baseRetryInterval,
         fetchOptions = baseFetchOptions,
+        customBaseUrl,
       } = requestAction.payload
 
       const origin = getOrigin(requestAction)
@@ -69,7 +70,7 @@ const makeApiumMiddleware = (configuration = {}) => {
           ...additionalMeta,
         })
 
-      const url = baseUrl + endpoint
+      const url = `${isNil(customBaseUrl) ? baseUrl : customBaseUrl}${endpoint}`
 
       const performFetch = async () => {
         let response
