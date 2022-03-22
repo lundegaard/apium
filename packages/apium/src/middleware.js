@@ -92,13 +92,14 @@ const makeApiumMiddleware = (configuration = {}) => {
           return errorEvent(error.toString(), makeBeforeResponseMeta())
         }
 
-        const { statusText, status: statusCode } = response
+        const { statusText, status: statusCode, headers: responseHeaders } = response
 
         const makeAfterResponseMeta = (additionalMeta = {}) =>
           makeBeforeResponseMeta(
             reject(isNil, {
               statusCode,
               statusText,
+              responseHeaders,
               ...additionalMeta,
             }),
           )
